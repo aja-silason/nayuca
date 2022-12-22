@@ -5,14 +5,82 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/general.module.css">
+    <link rel="stylesheet" href="./styles/menu.module.css">
+    <link rel="stylesheet" href="./styles/home.module.css">
     <title>Home</title>
 </head>
 <body>
     <div class="conteiner">
-        <div class="menu"></div>
+
+        <!--Menu-->
+        <div class="menu">
+            <div class="hidemenu"><span>Menu</span></div>
+
+            <div class="addinformations">
+                <div class="infocenter">
+                    <h3 class="titlemenu">Home</h3>
+                </div>
+                <div class="inforight">
+                    <p><a href="#">Aluno</a></p>
+                </div>
+            </div>
+
+        </div>
+
+        <!--Copro do home-->
         <div class="corpo">
-            <div class="dadosuser"></div>
-            <div class="cards"></div>
+
+            <div class="dadosuser">
+
+                <div class="dados">
+                    <h3><a href="#">Nome: Emerson Diogo</a></h3>
+                    <p><strong>ID:</strong> 220560</p>
+                    <p><strong>Bibliografia:</strong> Viva a vida intensamente &hearts;</p>
+
+                </div>
+
+                <div class="picture">
+                    <a href="#"><img src="./assets/default.png" alt="Profile image"></a>
+                </div>
+            </div>
+
+            <div class="cards">
+                <!--Card das notas-->
+                <div class="card1">
+                    <a href="#">
+                        <h4>Notas</h4>
+                        <img src="./assets/default.png" alt="Notas logo">
+                    </a>
+                    <a href="#" class="vernotas">Ver minha notas</a>
+                </div>
+
+                <!--Card da cantina-->
+                <div class="card2">
+                    <a href="#">
+                        <h4>Cantina</h4>
+                        <img src="./assets/default.png" alt="Cantina logo">
+                    </a>
+                    <a href="#" class="vercantina">O que tem na cantina</a>
+                </div>
+                
+                <!--Card da biblioteca-->
+                <div class="card3">
+                    <a href="#">
+                        <h4>Biblioteca</h4>
+                        <img src="./assets/default.png" alt="Biblioteca logo">
+                    </a>
+                    <a href="#" class="verlivros">Ver Livros</a>
+                </div>
+                
+                <!--Card dos anuncios-->
+                <div class="card4">
+                    <a href="#">
+                        <h4>Anuncios</h4>
+                        <img src="./assets/default.png" alt="Anuncios logo">
+                    </a>
+                    <a href="#" class="veranuncios">Ver Anuncios</a>
+                </div>
+            </div>
         </div>
     </div>
 </body>

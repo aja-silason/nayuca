@@ -1,0 +1,46 @@
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1A1B2F;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 2px;
+}
+.titlemenu{
+    color: #fff;
+}
+.hidemenu p, span{
+    color: #fff;
+}
+.inforight p a{
+    color: #fff;
+}
+.addinformations{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+}
+
+.addinformations{
+    margin: 0px;
+}
+.hidemenu{
+    width: 10%;
+    margin: 5px;
+}
+.infocenter{
+    margin-left: 0px;
+    width: 80%;
+}
+.inforight{
+    width: 20%;
+    margin-left: 2px;
+}
+.addinformations div{
+    display: flex;
+    align-items: baseline;
+    margin-top: 15px;
+    justify-content: center;
+}
