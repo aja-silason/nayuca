@@ -14,62 +14,50 @@
 
     <div class="conteiner">
 
-        <!--Menuflutuante-->
-        <div class="flutuante" id="flutuante">
-            <nav>
-                <ul class="li">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Anúncios</a></li>
-                    <li><a href="#">Cantina</a></li>
-                    <li><a href="#">Quadros</a></li>
-                    <li><a href="#">Biblioteca</a></li>
-                    <li><a href="#">Notas</a></li>
-                    <li><a href="#">Editar Perfil</a></li>
-                </ul>
-                <ul class="btn-x">
-                    <button onclick="fecharMenu()">X</button>
-                </ul>
+    <!--Header Menu e Hide Menu-->
+        <header>
+            <nav class="nav-bar">
+                <div class="logo">
+                    <h1>NAYUCA&trade;</h1>
+                </div>
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Anúncios</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Cantina</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Quadros</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Biblioteca</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Notas</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Perfil</a></li>
+                    </ul>
+                </div>
+                <div class="login-button">
+                    <button><a href="#">Aluno</a></button>
+                </div>
+
+                <div class="mobile-menu-icon">
+                    <button onclick="menuShow()"><img class="icon" src="assets/img/menu_white_36dp.svg" alt=""></button>
+                </div>
             </nav>
-            <div class="footermenu">
-                <p                     style="color: #ccc;">Campus Nayuca</p>
-            </div>
-        </div>
-
-        <!--Menuflutuante-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--Menu-->
-        <div class="menu">
-            <div class="hidemenu">
-                <button class="abrirmenu" id="abrirmenu">Menu</button>
-            </div>
-
-            <div class="addinformations">
-                <div class="infocenter">
-                    <h3 class="titlemenu">Home</h3>
-                </div>
-                <div class="inforight">
-                    <p><a href="#">Aluno</a></p>
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Anúncios</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Cantina</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Quadros</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Biblioteca</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Notas</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Perfil</a></li>
+                </ul>
+                <div class="login-button">
+                    <button><a href="#">Aluno</a></button>
                 </div>
             </div>
+        </header>
 
-        </div>
+
+
+
 
         <!--Copro do home-->
         <div class="corpo">
@@ -127,5 +115,6 @@
             </div>
         </div>
     </div>
+    <script src="./js/showmenu.js"></script>
 </body>
 </html>
