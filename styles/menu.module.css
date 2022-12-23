@@ -1,3 +1,4 @@
+/*Barra do menu*/
 .menu{
     display: flex;
     justify-content: center;
@@ -43,4 +44,51 @@
     align-items: baseline;
     margin-top: 15px;
     justify-content: center;
+}
+
+.hidemenu button{
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 13pt;
+    cursor: pointer;
+}
+
+/*menu flutuante*/
+
+.flutuante{
+    background-color: #1A1B2F;
+    padding: 5px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 97.6%;
+    visibility: hidden;
+}
+.flutuante nav{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+nav .li{
+    width: 80%;
+}
+nav .li li{
+    margin-bottom: 40px;
+}
+.flutuante nav ul li a{
+    color: #fff;
+    font-size: 16pt;
+}
+.flutuante li{
+    margin: 10px;
+    list-style: none;
+}
+.btn-x button{
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16pt;
 }
