@@ -16,9 +16,7 @@
     .descricao{
         display: none;
     }
-    .allrights{
-        margin-top: 50px;
-    }
+    
     .allrights p{
         color: #ccc;
     }
@@ -28,6 +26,25 @@
     
 }
 
+.allrights{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.allrights .social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social a{
+    margin: 1em;
+}
+.social img{
+    width: 30px;
+}
 @media screen and (min-width: 730px){
     .conteiner-general{
         display: flex;
@@ -68,6 +85,9 @@
         align-items: center;
     }
     .logo{
+        display: none;
+    }
+    .allrights.mobile{
         display: none;
     }
 }
