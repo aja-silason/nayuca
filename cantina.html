@@ -7,26 +7,108 @@
     <link rel="stylesheet" href="./styles/cantina.module.css">
     <link rel="stylesheet" href="./styles//general.module.css">
     <link rel="stylesheet" href="./styles/menu.module.css">
+    <script src="./js/showmenu.js"></script>
     <title>Cantina</title>
 </head>
 <body>
     <div class="container">
-        <!--Menu-->
-        <div class="menu">
-            <div class="hidemenu"><span>Menu</span></div>
-
-            <div class="addinformations">
-                <div class="infocenter">
-                    <h3 class="titlemenu">Home</h3>
+        <!--Header Menu e Hide Menu-->
+        <header>
+            <nav class="nav-bar">
+                <div class="logo">
+                    <h1>NAYUCA&trade;</h1>
                 </div>
-                <div class="inforight">
-                    <p><a href="#">Aluno</a></p>
+                <div class="nav-list">
+                    <ul>
+                        <li class="nav-item"><a href="./home.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Anúncios</a></li>
+                        <li class="nav-item"><a href="./cantina.html" class="nav-link"> Cantina</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Quadros</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Biblioteca</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Notas</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Perfil</a></li>
+                    </ul>
+                </div>
+                <div class="login-button">
+                    <button><a href="#">Aluno</a></button>
+                </div>
+
+                <div class="mobile-menu-icon">
+                    <button onclick="menuShow()"><img class="icon" src="assets/icons/menu_white_36dp.svg" alt=""></button>
+                </div>
+            </nav>
+            <div class="mobile-menu">
+                <ul>
+                    <li class="nav-item"><a href="./home.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Anúncios</a></li>
+                        <li class="nav-item"><a href="./cantina.html" class="nav-link"> Cantina</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Quadros</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Biblioteca</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Notas</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link"> Perfil</a></li>
+                </ul>
+                <div class="login-button">
+                    <button><a href="#">Aluno</a></button>
+                </div>
+            </div>
+        </header>
+        <div class="corpo">
+            <div class="cards">
+                <div class="card1">
+                    <a href="#"><div class="img">
+                        <img src="./assets/cantina/hamburguer2.jpeg" alt="Item 1">
+                    </div></a>
+                    <a href="#"><div class="info">
+                        <h3>Hamburguer</h3>
+                    </div></a>
+                </div>
+                <div class="card1">
+                    <a href="#"><div class="img">
+                        <img src="./assets/cantina/hamburguer2.jpeg" alt="Item 1">
+                    </div></a>
+                    <a href="#"><div class="info">
+                        <h3>Hamburguer</h3>
+                    </div></a>
+                </div>
+                <div class="card1">
+                    <a href="#"><div class="img">
+                        <img src="./assets/cantina/hamburguer2.jpeg" alt="Item 1">
+                    </div></a>
+                    <a href="#"><div class="info">
+                        <h3>Hamburguer</h3>
+                    </div></a>
+                </div>
+                <div class="card1">
+                    <a href="#"><div class="img">
+                        <img src="./assets/cantina/hamburguer2.jpeg" alt="Item 1">
+                    </div></a>
+                    <a href="#"><div class="info">
+                        <h3>Hamburguer</h3>
+                    </div></a>
                 </div>
             </div>
 
-        </div>
-        <div class="corpo">
-            
+            <div class="panel">
+                <div class="imagem">
+                    <img src="./assets/cantina/macarrao-a-bolonhesa.jpg" alt="Main Item">
+                </div>
+
+                <div class="description">
+                    <div class="name">
+                        <h2>Macarrão</h2>
+                    </div>
+                    <div class="details">
+                        <p>
+                            Apesar da especificação não impor requesitos sobre os nomes de classes, é considerada boa prática usar nomes que descrevam o propósito semântico do elemento, em vez de sua representação (e.g. atributo para descrever um atributo em vez de ítalico,.
+                        </p>
+                    </div>
+                    <div class="price">
+                        <p>Antes: <span class="after">Kz: 1.500,00</span></p>
+                        <p>Agora: <span class="before">Kz: 1.500,00</span></p>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

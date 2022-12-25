@@ -28,7 +28,10 @@
         justify-content: center;
     }
     
-    .card1, .card2, .card3, .card4{
+    .card1, 
+    .card2, 
+    .card3, 
+    .card4{
         background-color: #fff;
         height: 30vh;
         width: 45%;
@@ -36,6 +39,9 @@
         border-radius: 5px;
         margin-bottom: 7px;
         padding: 5px;
+    }
+    .bvmt *{
+        display: none;
     }
     
     /*datalhes dos cards*/
@@ -69,7 +75,8 @@
         height: 50px;
         margin: 5px;
     }
-    .vernotas, .veranuncios{
+    .vernotas, 
+    .veranuncios{
         color: #FFB423;
         background-color: #1A1B2F;
         padding: 5px;
@@ -77,7 +84,8 @@
         border-radius: 5px;
     }
     
-    .vercantina, .verlivros{
+    .vercantina, 
+    .verlivros{
         color: #1A1B2F;
         background-color:#FFB423;
         padding: 5px;
@@ -116,12 +124,15 @@
         width: 90%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content:space-between;
         align-items: center;
         height: 100vh;
     }
     
-    .card1, .card2, .card3, .card4{
+    .card1, 
+    .card2, 
+    .card3, 
+    .card4{
         background-color: #e2e2e2;
         height: 30vh;
         width: 25%;
@@ -131,11 +142,33 @@
         transition: 200ms;
         border-bottom: 10px solid #1A1B2F;
     }
-    .card1:hover{
-        border-bottom: 10px solid #FFB423;
+
+    .card2:hover, 
+    .card3:hover, 
+    .card1:hover, 
+    .card4:hover{
+        border-bottom: 10px solid #c48509;
     }
     /*datalhes dos cards*/
-    
+    /*cards brevimente*/
+    .bvmt{
+        background-color: #e2e2e2;
+        height: 30vh;
+        width: 25%;
+        margin-right: 7px;
+        cursor: pointer;
+        padding: 5px;
+        transition: 200ms;
+        border-bottom: 10px solid #e2e2e2;
+        filter: opacity(.6);
+    }
+    .bvmt img{
+        filter: grayscale(100);
+    }
+    .bvmt:hover{
+        background-color: #bdbbbb;
+        border-bottom: 10px solid #bdbbbb;
+    }    
     /*Daos do usuário*/
     .dadosuser .dados{
         width: 85%;
@@ -172,7 +205,8 @@
     .card1, 
     .card2, 
     .card3, 
-    .card4{
+    .card4, 
+    .bvmt{
         display: flex;
         align-items: center;
         justify-content: center;
