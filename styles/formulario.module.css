@@ -6,14 +6,30 @@
     justify-content: center;
     align-items: center;
 }
+
+span{
+    font-family: Arial;
+}
+h3{
+    font-weight: 600;
+}
+
+
 input{
     height: 2em;
-    width: 90%;
+    width: 25.5em;
     margin-bottom: 1em;
-    border: 1px solid gray;
-    border-radius: 5px;
+    border: none;
+    background-color: #f1f2f1;
+    border-bottom: 2px solid #1A1B2F;
     font-size: 12pt;
     padding: 5px;
+    transition: 300ms;
+    cursor: pointer;
+}
+input:hover{
+    border-color: #FFB423;
+    background-color: #e7e7e7;
 }
 .button{
     display: flex;
@@ -26,28 +42,26 @@ input{
     color: #FFB423;
     border: none;
     cursor: pointer;
-    width: 91%;
-    height: 3.5em;
+    width: 26em;
+    height: 3em;
     font-size: 12pt;
+    transition: 400ms;
 }
-input[type = submit]:hover{
-    background-color: rgb(230, 154, 13);
+[type = submit]:hover{
+    background-color: #272952;
 }
-span{
-    font-family: Arial;
-}
-h3{
-    font-weight: 600;
-}
-@media screen and (min-width: 730px){
+
+@media screen and (max-width: 730px){
     input{
-        height: 2em;
-        width: 25em;
+        height: 2.4em;
+        width: 90%;
         margin-bottom: 1em;
-        border: 1px solid gray;
-        border-radius: 5px;
+        border-bottom: 1px solid gray;
         font-size: 12pt;
         padding: 5px;
+        border-radius: 1px;
+        border-bottom: 2px solid;
+        background-color: #f6f8f6;
     }
     .button{
         display: flex;
@@ -60,8 +74,8 @@ h3{
         color: #FFB423;
         border: none;
         cursor: pointer;
-        width: 26em;
-        height: 3em;
+        width: 93%;
+        height: 3.5em;
         font-size: 12pt;
     }
     input[type = submit]:hover{

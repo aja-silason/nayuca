@@ -25,7 +25,7 @@
     margin: 10px 20px;
     border: 1px solid #ccc;
     background-color: #e2e2e2;
-    transition: 600ms;
+    transition: 500ms;
     cursor: pointer;
 }
 .card1:hover .info{
@@ -42,9 +42,11 @@
 .cards .info{
     background-color: #1A1B2F;
     margin: 0;
+    transition: 600ms;
 }
 .info h3{
     color: #fff;
+    
 }
 .panel{
     display: flex;
@@ -70,6 +72,13 @@
     display: flex;
     justify-content: space-between;
 }
+.description .desp{
+    display: flex;
+    justify-content: center;
+}
+.desp p{
+    margin: 2px;
+}
 .price{
     font-weight: 800;
 }
@@ -77,8 +86,25 @@
     color: #aa1d1d;
     text-decoration: line-through;
 }
+.price .after.multa{
+    text-decoration: none;
+}
 .price .before{
     color: #1a791a;
+}
+.readbook{
+    margin-top: 30px;
+}
+.readbook a{
+    background-color: #1A1B2F;
+    color: #c48509;
+    padding: 10px 50px;
+    border-radius: 5px;
+    transition: 300ms;
+}
+.readbook a:hover{
+    background-color: #242544;
+    color: #FFB423;
 }
 @media screen and (max-width: 730px){
     .corpo{
@@ -92,7 +118,7 @@
     }
     .cards{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         background-color: #dbdbdb;
         padding: 10px;
         border-radius: 20px;
@@ -100,12 +126,37 @@
     .cards .card1{
         margin: 5px;
         height: 180px;
+        font-size: 9pt;
     }
     .card1 img{
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 160px;
     }
     .panel{
         margin-top: 25px;
+    }
+    .panel .description .name{
+        font-size: 12pt;
+    }
+    .readbook{
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .readbook a{
+        background-color: #1A1B2F;
+        color: #c48509;
+        padding: 10px 50px;
+        border-radius: 5px;
+        transition: 300ms;
+        width: 75%;
+    }
+    .readbook a:hover{
+        background-color: #242544;
+        color: #FFB423;
     }
 }

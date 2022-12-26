@@ -4,8 +4,7 @@
         display: flex;
         flex-direction: column;
         align-items:center;
-        justify-content: center;/*
-        margin-top: 150px;*/
+        justify-content: center;
         background-color: #fff;
         margin-top: 2%;
         margin-left: 2px;
@@ -50,18 +49,21 @@
         display: flex;
         justify-content: center;
         flex-direction: column;
+        background-color: #fff;
+        height: 100vh;
+
     }
     .conteiner{
         display: flex;
         justify-content: center;
         width: 940px;
-        background-color: #fff;
         margin-top: 2%;
         padding: 50px;
         margin-left: 130px;
         height: 70vh;
-        border-radius: 5px;
-        box-shadow: 1px 1px 5px 5px #ccc;
+        border-radius: 3px;
+        border: 1px solid #ccc;/*
+        box-shadow: 1px 1px 5px 5px #ccc;*/
     }
     .conteiner .descricao, .formulario{
         width: 50%;
@@ -71,12 +73,9 @@
     .conteiner .descricao .descrever{
         height: 70vh;        
     }
-    .descricao h1{
-        color: rgb(104, 98, 98);
-    }
     .conteiner .descricao p{
         text-align: justify;
-        color:rgb(104, 98, 98);
+        color:#181818;
     }
     .conteiner .descricao .allrights p{
         color: #ccc;
