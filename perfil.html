@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="./styles/general.module.css">
     <link rel="stylesheet" href="./styles/menu.module.css">
     <link rel="stylesheet" href="./styles/home.module.css">
+    <link rel="stylesheet" href="./styles/perfil.module.css">
+    <link rel="stylesheet" href="./styles/formulario.module.css">
    <script src="./js/showmenu.js"></script>
-    <title>Home</title>
+    <title>Notas</title>
 </head>
 <body>
 
@@ -64,73 +66,45 @@
                     <h3><a href="./perfil.html">Nome: Emerson Diogo</a></h3>
                     <p><strong>ID:</strong> 220560</p>
                     <p><strong>Bibliografia:</strong> Viva a vida intensamente &hearts;</p>
-
+                    <p><strong>Classe:</strong> 13º ano</p>
+                    <p><strong>Curso:</strong> Técnico de Informática</p>
+                    <div class="editarperfil mobile">
+                        <a href="#editarperfil">Editar Perfil</a>
+                    </div>
                 </div>
 
                 <div class="picture">
-                    <a href="./perfil"><img src="./assets/user/user-tie-solid.svg" alt="Profile image"></a>
-
-
-                    <div class="editar">
-                        <a href="./perfil.html">Editar Perfil</a>
+                    <a href="./perfil"><img src="./assets/user/user-graduate-solid.svg" alt="Profile image"></a>
+                    <div class="editarperfil desk">
+                        <a href="#editarperfil">Editar Perfil</a>
                     </div>
 
-                </div>
-            </div>
-
-            <div class="cards">
-                <!--Card das notas-->
-                <div class="card1">
-                    <a href="./notas.html">
-                        <h4>Notas</h4>
-                        <img src="./assets/icons/table-cells-solid.svg" alt="Notas logo">
-                    </a>
-                    <a href="./notas.html" class="vernotas">Ver minha notas</a>
-                </div>
-
-                <!--Card da cantina-->
-                <div class="card2">
-                    <a href="./cantina.html">
-                        <h4>Cantina</h4>
-                        <img src="./assets/icons/burger-solid.svg" alt="Cantina logo">
-                    </a>
-                    <a href="./cantina.html" class="vercantina">O que tem na cantina</a>
                 </div>
                 
-                <!--Card da biblioteca-->
-                <div class="card3">
-                    <a href="./biblioteca.html">
-                        <h4>Biblioteca</h4>
-                        <img src="./assets/icons/book-solid.svg" alt="Biblioteca logo">
-                    </a>
-                    <a href="./biblioteca.html" class="verlivros">Ver Livros</a>
-                </div>
+            </div>
+
+            <div class="editarperfil container" id="editarperfil">
                 
-                <!--Card dos anuncios-->
-                <div class="card4">
-                    <a href="./anuncios.html">
-                        <h4>Anuncios</h4>
-                        <img src="./assets/icons/triangle-exclamation-solid.svg" alt="Anuncios logo">
-                    </a>
-                    <a href="./anuncios.html" class="veranuncios">Ver Anuncios</a>
-                </div>
-
-                <!--Cards para brevimente-->
-
-                <div class="bvmt">
+                <h3>Editar Perfil</h3>                
+                <form action="#" method="post" enctype="multipart/form-data">
                     <div>
-                        <img src="./assets/icons/triangle-exclamation-solid.svg" alt="Anuncios logo">
-                        <h4>BREVEMENTE</h4>
+                        <p>Adicione uma fotografia <span>*</span></p>
+                        <input type="file" name="userimg" id="userimg" class="imguser">
                     </div>
-                </div>
-                <div class="bvmt">
+
                     <div>
-                        <img src="./assets/icons/triangle-exclamation-solid.svg" alt="Anuncios logo">
-                        <h4>BREVEMENTE</h4>
+                        <p>A sua descrição <span>*</span></p>
+                        <textarea name="descricao" id="descricao" class="descricao" maxlength="70" min="2" placeholder="A sua descição" aria-multiselectable=""></textarea>
                     </div>
-                </div>
+                    
+                    <div>
+                        <button type="submit" name="btneditar" id="btneditar" class="btneditar">Salvar</button>
+                    </div>
+                </form>
 
             </div>
+
+
         </div>
     </div>
 </body>
