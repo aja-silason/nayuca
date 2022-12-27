@@ -1,0 +1,94 @@
+/*dados da area de informações do ususários*/
+.dadosuser{
+    height: 100%;
+    padding: 50px 0;
+}
+.dadosuser .picture a img{
+    width: 200px;
+    height: 200px !important;
+    border: 1px soli gray;
+    height: 100px;
+    border-radius: 0;
+}
+.picture{
+    height: 100%;
+}
+/*dados da area de informações do ususários*/
+.calendario{
+    margin: 50px 0;
+}
+table *{
+}
+
+
+/*Tabela geral*/
+
+/*table thead{
+    border-radius: 50px;
+}*/
+
+/*Cabeçalho da tabela*/
+thead{
+    background-color: #FFB423;
+}
+thead tr th{
+    color: #1A1B2F;
+    padding: 5px 5px;
+}
+tr.trimestres th{
+    background-color: #666669;
+    color: #fff;
+}
+/*Corpo da tabela*/
+tbody{
+    background-color: #1A1B2F;
+}
+tbody tr th{
+    color: #fff;
+    padding: 5px 20px;
+}
+
+table.mobile{
+    display: none;
+}
+table.mobile{
+    width: 99%;
+}
+@media screen and (max-width: 730px){
+/*dados da area de informações do ususários*/
+
+    .dadosuser{
+        height: 100%;
+        width: 98%;
+        border-bottom: 5px solid #1A1B2F;
+        border-radius: 0;
+        box-shadow: 1px 10px 5px -3px #ccc;
+    }
+    .dados{
+        margin: 20px 0;
+    }
+    .dadosuser{
+        flex-direction: column-reverse;
+    }
+    .dadosuser .picture a img{
+        width: 330px;
+        height: 280px !important;
+    }
+/*dados da area de informações do ususários*/
+
+.corpo{
+    background-color: #fff;
+    align-items: center;
+}
+/*Dados da tabela desktop*/
+    table.desktop{
+        display: none;
+    }
+    table.mobile{
+        display: block;
+        font-size: 10pt;
+    }
+    .mobile th{
+        padding: 5px 5px;
+    }
+}
