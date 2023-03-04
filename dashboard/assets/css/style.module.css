@@ -1,0 +1,75 @@
+:root{
+    --azul-escuro: #1A1B2F;
+    --amarelo: #FFB423;
+}
+/*Cad Aluno*/
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+span{
+    color: red rgb(127, 235, 127);
+}
+
+input, textarea, select{
+    height: 3em;
+    width: 30em;
+    margin-bottom: 1em;
+    border: none;
+    background-color: #f1f2f1;
+    border-bottom: 2px solid #1A1B2F;
+    font-size: 12pt;
+    padding: 5px;
+    transition: 300ms;
+    cursor: pointer;
+}
+.nt-nt{
+    display: flex;
+}
+input.notas{
+    width: 10px;
+}
+[type=file]{
+    height: 3em;
+    border: none;
+    background: transparent;
+}
+input:hover, textarea:hover{
+    border-color: #FFB423;
+    background-color: #e7e7e7;
+}
+label{
+    width: 200px;
+    cursor: pointer;
+}
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--azul-escuro);
+    color: var(--amarelo);
+    cursor: pointer;
+    height: 3em;
+    width: 34.3em;
+    border-radius: 5px;
+    font-size: 1em;
+}
+button:hover{
+    background-color: #26284e;
+}
+select{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: var(--azul-escuro);
+    color: var(--amarelo);
+    cursor: pointer;
+    height: 2em;
+    padding: 0 5px;
+    width: 34.3em;
+    border-radius: 5px;
+    font-size: 1em;   
+}

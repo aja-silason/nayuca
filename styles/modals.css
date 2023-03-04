@@ -1,0 +1,156 @@
+:root{
+    --cormenuazul: #1f2276;
+    --corbranca: #fefefe;
+    --corbrancaescura: #fefefeea;
+    --corpreta: rgb(48, 47, 47);
+    --corpretatransparente: rgba(48, 47, 47, 0.5);
+    --corfundoconteiner: #cecece;
+}
+#modalExemplo:checked + .modal{
+    display: flex;
+    transition: 600ms;
+}
+.modal{
+    position: fixed;
+    width: 100%;
+    height: 100vh;/*
+    margin-top: -15.5%;*/
+    background-color: rgba(0, 0, 0, 0.6);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+label{
+    cursor: pointer;
+}
+.modal .fecharmodal{
+    position: absolute;
+    top: 16%;
+    right: 16%;
+    color: #ccc;
+    font-size: 20pt;
+    font-weight: 600;
+}
+.modal .fecharmodal:hover{
+    cursor: pointer;
+    color: red;
+    transition: 600ms;
+}
+.chekboxModal{
+    display: none;
+}
+.modal .conteudoModal{
+    background-color: #fefefe;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.conteudoModal div{
+    width: 50%;
+    padding: 20px;
+}
+.conteudoModal .imagem img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+.conteudoModal div h2{
+    margin-bottom: 10px;
+}
+.conteudoModal div h4{
+    margin-bottom: 15px;
+}
+
+/*Para botões que chamam modais*/
+
+.btnModal{
+    background-color: #fefefe;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: -95%;
+}
+.conteinermodal.confirmacao{
+    display: fixed;
+    position: absolute;
+    margin-top: -58.5%;
+    margin-left: -100%;
+    color: #ccc;
+    text-align: center;
+}
+.btns{
+    display: flex;
+}
+.confirmacao .conteudoModal{
+    height: 30%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.confirmacao .conteudoModal .dados .btns{
+    width: 100%;
+}
+.conteudoModal .dados .btns label{
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 20pt;
+    color: var(--corpretatransparente);
+    background-color: var(--corfundoconteiner);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.conteudoModal .dados .btns button{
+    width: 50%;
+    height: 50px;
+    border-radius: 5px;
+    margin-left: 5px;
+    font-size: 20pt;
+    color: var(--corbranca);
+    background-color: var(--cormenuazul);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.dados input{
+    width: 100%;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+.paiscreate{
+    border: 1px solid var(--corpretatransparente);
+    border-radius: 5px;
+    height: 40px;
+    width: 102%;
+    font-weight: 700;
+    padding-left: 5px;
+    font-size: 14pt;
+    color: rgba(204, 204, 204, 0.7);
+    margin-bottom: 5px;
+    background-color: var(--corpretatransparente);
+}
+.erro, .erro2, .erro3{
+    background-color: var(--cormenuazul);
+    height: 40px;
+    margin-bottom: 5px;
+    padding: 5px;
+    font-size: 11pt;
+    justify-content: center;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+/*btn visualizar*/
+
+span{
+    font-weight: bold;
+}

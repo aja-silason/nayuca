@@ -1,5 +1,24 @@
+<?php
+
+include "conexao.php";
+
+session_start();
+
+if(!isset($_SESSION['logado'])):
+    header('Location: ./index.php');
+endif;
+
+$id = $_SESSION['id_usuario'];
+
+$sql = "SELECT * FROM user WHERE id = '$id'";
+
+$resultado = mysqli_query($connect, $sql);
+$dados = mysqli_fetch_array($resultado);
+
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,48 +34,7 @@
     <div class="conteiner">
 
     <!--Header Menu e Hide Menu-->
-        <header>
-            <nav class="nav-bar">
-                <div class="logo">
-                    <h1>NAYUCA&trade;</h1>
-                </div>
-                <div class="nav-list">
-                    <ul>
-                        <li class="nav-item"><a href="./home.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="./anuncios.html" class="nav-link">Anúncios</a></li>
-                        <li class="nav-item"><a href="./cantina.html" class="nav-link"> Cantina</a></li>
-                        <li class="nav-item"><a href="./quadros.html" class="nav-link"> Quadros</a></li>
-                        <li class="nav-item"><a href="./biblioteca.html" class="nav-link"> Biblioteca</a></li>
-                        <li class="nav-item"><a href="./notas.html" class="nav-link">Notas</a></li>
-                        <li class="nav-item"><a href="./perfil.html" class="nav-link"> Perfil</a></li>
-                        <li class="nav-item"><a href="./" class="nav-link"> Sair</a></li>
-
-                    </ul>
-                </div>
-                <div class="login-button">
-                    <button><a href="./perfil.html">Aluno</a></button>
-                </div>
-
-                <div class="mobile-menu-icon">
-                    <button onclick="menuShow()"><img class="icon" src="assets/icons/menu_white_36dp.svg" alt=""></button>
-                </div>
-            </nav>
-            <div class="mobile-menu">
-                <ul>
-                    <li class="nav-item"><a href="./home.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="./anuncios.html" class="nav-link">Anúncios</a></li>
-                        <li class="nav-item"><a href="./cantina.html" class="nav-link"> Cantina</a></li>
-                        <li class="nav-item"><a href="./quadros.html" class="nav-link"> Quadros</a></li>
-                        <li class="nav-item"><a href="./biblioteca.html" class="nav-link"> Biblioteca</a></li>
-                        <li class="nav-item"><a href="./notas.html" class="nav-link">Notas</a></li>
-                        <li class="nav-item"><a href="./perfil.html" class="nav-link"> Perfil</a></li>
-                        <li class="nav-item"><a href="./" class="nav-link"> Sair</a></li>
-                </ul>
-                <div class="login-button">
-                    <button><a href="./perfil.html">Aluno</a></button>
-                </div>
-            </div>
-        </header>
+        <?php include("./menu.php") ?>
 
         <!--Copro do home-->
         <div class="corpo">
@@ -64,18 +42,23 @@
             <div class="dadosuser">
 
                 <div class="dados">
-                    <h3><a href="./perfil.html">Nome: Emerson Diogo</a></h3>
-                    <p><strong>ID:</strong> 220560</p>
-                    <p><strong>Bibliografia:</strong> Viva a vida intensamente &hearts;</p>
+                    <h3><a href="./perfil.php">Nome: <?php echo $dados['nome']; ?></a></h3>
+                    <p><strong>ID:</strong> <?php echo $dados['iduser']?></p>
+                    <p><strong>Bibliografia:</strong> <?php echo $dados['descricao']?></p>
 
                 </div>
 
                 <div class="picture">
-                    <a href="./perfil"><img src="./assets/user/user-tie-solid.svg" alt="Profile image"></a>
+                    <a href="./perfil"><img src="./assets/user/<?php 
+                    if($dados['img'] == ""){
+                        echo "user-tie-solid.svg";
+                    }else {
+                       echo $dados['img'];
+                    }?>" alt="Profile image"></a>
 
 
                     <div class="editar">
-                        <a href="./perfil.html">Editar Perfil</a>
+                        <a href="./perfil.php">Editar Perfil</a>
                     </div>
 
                 </div>
@@ -84,38 +67,38 @@
             <div class="cards">
                 <!--Card das notas-->
                 <div class="card1">
-                    <a href="./notas.html">
+                    <a href="./notas.php">
                         <h4>Notas</h4>
                         <img src="./assets/icons/table-cells-solid.svg" alt="Notas logo">
                     </a>
-                    <a href="./notas.html" class="vernotas">Ver minha notas</a>
+                    <a href="./notas.php" class="vernotas">Ver minha notas</a>
                 </div>
 
                 <!--Card da cantina-->
                 <div class="card2">
-                    <a href="./cantina.html">
+                    <a href="./cantina.php">
                         <h4>Cantina</h4>
                         <img src="./assets/icons/burger-solid.svg" alt="Cantina logo">
                     </a>
-                    <a href="./cantina.html" class="vercantina">O que tem na cantina</a>
+                    <a href="./cantina.php" class="vercantina">O que tem na cantina</a>
                 </div>
                 
                 <!--Card da biblioteca-->
                 <div class="card3">
-                    <a href="./biblioteca.html">
+                    <a href="./biblioteca.php">
                         <h4>Biblioteca</h4>
                         <img src="./assets/icons/book-solid.svg" alt="Biblioteca logo">
                     </a>
-                    <a href="./biblioteca.html" class="verlivros">Ver Livros</a>
+                    <a href="./biblioteca.php" class="verlivros">Ver Livros</a>
                 </div>
                 
                 <!--Card dos anuncios-->
                 <div class="card4">
-                    <a href="./anuncios.html">
+                    <a href="./anuncios.php">
                         <h4>Anuncios</h4>
                         <img src="./assets/icons/triangle-exclamation-solid.svg" alt="Anuncios logo">
                     </a>
-                    <a href="./anuncios.html" class="veranuncios">Ver Anuncios</a>
+                    <a href="./anuncios.php" class="veranuncios">Ver Anuncios</a>
                 </div>
 
                 <!--Cards para brevimente-->

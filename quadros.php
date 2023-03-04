@@ -1,10 +1,34 @@
+<?php
+
+include "conexao.php";
+
+session_start();
+
+if(!isset($_SESSION['logado'])):
+    header('Location: ./index.php');
+endif;
+
+$id = $_SESSION['id_usuario'];
+
+//Para pegar dados do usuário para sessão
+$sql = "SELECT * FROM user WHERE id = '$id'";
+
+$resultado = mysqli_query($connect, $sql);
+$dados = mysqli_fetch_array($resultado);
+
+
+$filtro = isset($_GET['pesquisar'])?$_GET['pesquisar']: "";
+$anc = "SELECT * FROM quadros where id like '%$filtro%'";
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/items.module.css">
+    <link rel="stylesheet" href="./styles/configure.module.css">
     <link rel="stylesheet" href="./styles//general.module.css">
     <link rel="stylesheet" href="./styles/menu.module.css">
     <script src="./js/showmenu.js"></script>
@@ -12,104 +36,69 @@
 </head>
 <body>
     <div class="container">
-        <!--Header Menu e Hide Menu-->
-        <header>
-            <nav class="nav-bar">
-                <div class="logo">
-                    <h1>NAYUCA&trade;</h1>
-                </div>
-                <div class="nav-list">
-                    <ul>
-                        <li class="nav-item"><a href="./home.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="./anuncios.html" class="nav-link">Anúncios</a></li>
-                        <li class="nav-item"><a href="./cantina.html" class="nav-link"> Cantina</a></li>
-                        <li class="nav-item"><a href="./quadros.html" class="nav-link"> Quadros</a></li>
-                        <li class="nav-item"><a href="./biblioteca.html" class="nav-link"> Biblioteca</a></li>
-                        <li class="nav-item"><a href="./notas.html" class="nav-link">Notas</a></li>
-                        <li class="nav-item"><a href="./perfil.html" class="nav-link"> Perfil</a></li>
-                        <li class="nav-item"><a href="./" class="nav-link"> Sair</a></li>
-
-                    </ul>
-                </div>
-                <div class="login-button">
-                    <button><a href="./perfil.html">Aluno</a></button>
-                </div>
-
-                <div class="mobile-menu-icon">
-                    <button onclick="menuShow()"><img class="icon" src="assets/icons/menu_white_36dp.svg" alt=""></button>
-                </div>
-            </nav>
-            <div class="mobile-menu">
-                <ul>
-                    <li class="nav-item"><a href="./home.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="./anuncios.html" class="nav-link">Anúncios</a></li>
-                        <li class="nav-item"><a href="./cantina.html" class="nav-link"> Cantina</a></li>
-                        <li class="nav-item"><a href="./quadros.html" class="nav-link"> Quadros</a></li>
-                        <li class="nav-item"><a href="./biblioteca.html" class="nav-link"> Biblioteca</a></li>
-                        <li class="nav-item"><a href="./notas.html" class="nav-link">Notas</a></li>
-                        <li class="nav-item"><a href="./perfil.html" class="nav-link"> Perfil</a></li>
-                        <li class="nav-item"><a href="./" class="nav-link"> Sair</a></li>
-
-                </ul>
-                <div class="login-button">
-                    <button><a href="./perfil.html">Aluno</a></button>
-                </div>
-            </div>
-        </header>
+        <!--Importando o Header Menu e Hide Menu-->
+        <?php include("./menu.php") ?>
+        <!--Importando o Header Menu e Hide Menu-->
+        
         <div class="corpo">
             <div class="cards">
+                <?php
+                    $sqlexb = "SELECT * FROM quadros order by id limit 4";
+                    $resultado = mysqli_query($connect, $sqlexb);
+
+                    while($exibir = mysqli_fetch_array($resultado)){
+                ?>
+
                 <div class="card1">
-                    <a href="#"><div class="img">
-                        <img src="./assets/quadros/qd1.jpg" alt="Item 1">
-                    </div></a>
-                    <a href="#"><div class="info">
-                        <h3>Director Pedagógico</h3>
-                    </div></a>
+                    <div class="img">
+                        <img src="./assets/quadros/<?php
+                            if($exibir['imgquadro'] == ""){
+                                echo 'triangle-exclamation-solid.svg';
+                            } else{
+                                echo $exibir['imgquadro'];
+                            }
+                         ?>" alt="Item 1">
+                    </div>
+                    <div class="info">
+                        <form action="" method="get">
+                            <input type="search" name="pesquisar" value="<?php echo $exibir['id']?>" style="display: none;"/>
+                            <button type="submit" style="background: none; color: #fff; font-weight: 500; border: none; width: 100%; cursor: pointer;font-size: 12pt;" value="<?php echo $exibir['id']?>" ><?php echo $exibir['nomequadro']?></button>
+                        </form>
+                    </div>
                 </div>
-                <div class="card1">
-                    <a href="#"><div class="img">
-                        <img src="./assets/quadros/qd1.jpg" alt="Item 1">
-                    </div></a>
-                    <a href="#"><div class="info">
-                        <h3>Sub-director</h3>
-                    </div></a>
-                </div>
-                <div class="card1">
-                    <a href="#"><div class="img">
-                        <img src="./assets/quadros/qd1.jpg" alt="Item 1">
-                    </div></a>
-                    <a href="#"><div class="info">
-                        <h3>Coord. de Informática</h3>
-                    </div></a>
-                </div>
-                <div class="card1">
-                    <a href="#"><div class="img">
-                        <img src="./assets/quadros/qd1.jpg" alt="Item 1">
-                    </div></a>
-                    <a href="#"><div class="info">
-                        <h3>Coord. de E.Telecom</h3>
-                    </div></a>
-                </div>
-                
+                <?php } ?>
                 
             </div>
 
             <div class="panel">
+                <?php        
+                 $sqlprod = "SELECT * FROM quadros WHERE id like '%$filtro%' order by id desc limit 1";
+                 $resultqdr = mysqli_query($connect,$sqlprod);
+                                         
+                    while($exibirqd = mysqli_fetch_array($resultqdr)){
+                ?>
                 <div class="imagem">
-                    <img src="./assets/quadros/qd1.jpg" alt="Main Item">
+                    <img src="./assets/quadros/<?php
+                    if($exibirqd['imgquadro'] == ""){
+                        echo 'triangle-exclamation-solid.svg';
+                    } else{
+                        echo $exibirqd['imgquadro'];
+                    }
+                    ?>" alt="Main Item">
                 </div>
 
                 <div class="description">
                     <div class="name">
-                        <h2>Director: João Manuel</h2>
+                        <h2><?php echo $exibirqd['cargo'];?>: <?php echo $exibirqd['nomequadro'];?></h2>
                     </div>
                     <div class="details">
                         <p>
-                            Formado em Engenharia informática pela UGS, pertence a comunidade Dev de Angola desde 2016.
+                            <?php echo $exibirqd['descricaoquadro'] ?>
                         </p>
                     </div>
                     
                 </div>
+                <?php } mysqli_close($connect); ?>
             </div>
         </div>
     </div>
